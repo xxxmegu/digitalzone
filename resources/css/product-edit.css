@@ -1,0 +1,206 @@
+.product-edit {
+    padding: 40px 0;
+}
+
+.form-container {
+    background: #171717;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.form-title {
+    color: #fff;
+    font-size: 24px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.form-group {
+    position: relative;
+}
+
+.form-group.full-width {
+    grid-column: 1 / -1;
+}
+
+.form-label {
+    display: block;
+    color: #fff;
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+.form-control {
+    width: 100%;
+    padding: 12px 16px;
+    background: #1f1f1f;
+    border: 1px solid #333;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 15px;
+    transition: all 0.3s ease;
+}
+
+.form-control:focus {
+    border-color: #196d00;
+    box-shadow: 0 0 0 2px rgba(25, 109, 0, 0.2);
+    outline: none;
+}
+
+.form-control::placeholder {
+    color: #666;
+}
+
+textarea.form-control {
+    min-height: 120px;
+    resize: vertical;
+}
+
+select.form-control {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%23666' viewBox='0 0 16 16'%3E%3Cpath d='M8 11L3 6h10l-5 5z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 16px center;
+    padding-right: 40px;
+    color: #35e200 !important;
+}
+
+select.form-control option {
+    background-color: #1f1f1f !important;
+    color: #fff !important;
+    padding: 8px;
+}
+
+select.form-control option:not([value=""]) {
+    display: block !important;
+}
+
+select.form-control option:hover,
+select.form-control option:focus,
+select.form-control option:active,
+select.form-control option:checked {
+    background-color: #218C00 !important;
+    color: #fff !important;
+}
+
+/* Исправление для Firefox */
+@-moz-document url-prefix() {
+    select.form-control {
+        color: #35e200;
+        background-color: #1f1f1f;
+    }
+    
+    select.form-control option {
+        background-color: #1f1f1f;
+    }
+
+    select.form-control option:checked {
+        background-color: #218C00 !important;
+        color: #fff !important;
+    }
+}
+
+/* Исправление для Chrome */
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    select.form-control {
+        color: #35e200;
+        background-color: #1f1f1f;
+    }
+    
+    select.form-control option {
+        background-color: #1f1f1f;
+    }
+
+    select.form-control option:checked {
+        background-color: #218C00 !important;
+        color: #fff !important;
+    }
+}
+
+.form-actions {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.btn-submit {
+    background: #196d00;
+    color: #fff;
+    border: none;
+    padding: 12px 40px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.btn-submit:hover {
+    background: #145a00;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(25, 109, 0, 0.2);
+}
+
+/* Поле названия должно быть на всю ширину */
+.form-group:first-child {
+    grid-column: 1 / -1;
+}
+
+@media (max-width: 768px) {
+    .product-edit {
+        padding: 20px 0;
+    }
+
+    .form-container {
+        padding: 20px;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .form-title {
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+
+    .btn-submit {
+        width: 100%;
+        padding: 12px 20px;
+    }
+}
+
+.category__edit {
+    min-height: 30vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+.title {
+    color: #fff;
+    font-size: 32px;
+    text-align: center;
+    margin-bottom: 40px;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: #218C00;
+}

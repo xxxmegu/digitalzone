@@ -1,0 +1,214 @@
+.products {
+    padding: 40px 0;
+    min-height: 100vh;
+    background: #1a1a1a;
+}
+
+.cart_table {
+    background-color: #171717;
+    margin: 0 auto;
+    border-collapse: separate;
+    border-spacing: 0;
+    width: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+.cart_table thead {
+    background: transparent;
+}
+
+.cart_table th {
+    background: transparent;
+    color: #39e604;
+    font-weight: 600;
+    padding: 15px;
+    text-align: center;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom: 2px solid #218C00;
+    white-space: nowrap;
+    vertical-align: middle;
+}
+
+.cart_table td {
+    padding: 15px;
+    text-align: center;
+    vertical-align: middle;
+    border-bottom: 1px solid rgba(33, 140, 0, 0.1);
+    color: #fff;
+    font-size: 14px;
+    display: table-cell;
+    height: 90px;
+}
+
+/* Особые случаи для определенных столбцов */
+.cart_table td:first-child,
+.cart_table th:first-child {
+    text-align: left; /* Для столбца с изображением */
+}
+
+.cart_table td:nth-child(2),
+.cart_table th:nth-child(2) {
+    text-align: left; /* Для столбца с названием */
+}
+
+.cart_table td:last-child,
+.cart_table th:last-child {
+    text-align: center; /* Для столбца с кнопками */
+}
+
+.cart_table tbody tr {
+    transition: all 0.3s ease;
+}
+
+.cart_table tbody tr:hover {
+    background-color: rgba(33, 140, 0, 0.05);
+    transform: translateX(5px);
+}
+
+.cart_table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.cart_table img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    border-radius: 8px;
+    background: #fff;
+    padding: 5px;
+    transition: transform 0.3s ease;
+}
+
+.btn-table {
+    display: flex;
+    align-items: center;
+    padding-top: 0;
+    padding-bottom: 0;
+    justify-content: center;
+}
+
+.btn__edit, .btn__delete {
+    padding: 8px 16px;
+    display: inline-flex;
+    align-items: center;
+}
+
+.btn__edit {
+    background-color: #218C00;
+    color: #fff;
+    border: 1px solid #218C00;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    font-size: 14px;
+    white-space: nowrap;
+    height: fit-content;
+    margin-right: 10px;
+}
+
+.btn__edit:hover {
+    background: transparent;
+    color: #39e604;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(33, 140, 0, 0.2);
+}
+
+.btn__delete {
+    background-color: #b40000;
+    color: #fff;
+    border: 1px solid #b40000;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    font-size: 14px;
+    cursor: pointer;
+    white-space: nowrap;
+    height: fit-content;
+}
+
+.btn__delete:hover {
+    background: transparent;
+    color: #ff0000;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(180, 0, 0, 0.2);
+}
+
+@media (max-width: 991px) {
+    .cart_table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .cart_table::-webkit-scrollbar {
+        height: 8px;
+    }
+
+    .cart_table::-webkit-scrollbar-track {
+        background: #0f0f0f;
+        border-radius: 4px;
+    }
+
+    .cart_table::-webkit-scrollbar-thumb {
+        background: #218C00;
+        border-radius: 4px;
+    }
+
+    .cart_table th,
+    .cart_table td {
+        padding: 12px;
+    }
+
+    .cart_table img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .btn__edit,
+    .btn__delete {
+        padding: 6px 12px;
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 768px) {
+    .products {
+        padding: 20px 0;
+    }
+
+    .cart_table th {
+        font-size: 13px;
+        padding: 15px 12px;
+    }
+
+    .cart_table td {
+        font-size: 13px;
+        padding: 12px;
+    }
+
+    .cart_table img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .btn-table {
+        flex-direction: column;
+    }
+
+    .btn__edit {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .btn__delete {
+        justify-content: center;
+        padding: 5px 10px;
+        font-size: 12px;
+        min-width: 80px;
+    }
+}

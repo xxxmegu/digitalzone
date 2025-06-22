@@ -1,0 +1,245 @@
+.register {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0;
+    width: 100%;
+}
+
+.register .container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.row {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.register-content {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.register__form {
+    width: 100%;
+    background-color: #171717;
+    border-radius: 20px;
+    padding: 40px;
+    position: relative;
+    overflow: hidden;
+}
+
+.register__form::before {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    border-radius: 20px;
+    padding: 2px;
+    background: linear-gradient(45deg, #218C00, transparent, #218C00, transparent);
+    background-size: 200% 100%;
+    -webkit-mask: 
+        linear-gradient(#fff 0 0) content-box, 
+        linear-gradient(#fff 0 0);
+    mask: 
+		linear-gradient(#fff 0 0) content-box, 
+		linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    animation: borderAnimation 4s linear infinite;
+    z-index: 0;
+}
+
+.register__form > * {
+    position: relative;
+    z-index: 2;
+}
+
+.register__title {
+    color: #fff;
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+    position: relative;
+}
+
+.register__title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: #218C00;
+}
+
+.register__form input[type="text"],
+.register__form input[type="email"],
+.register__form input[type="password"],
+.register__form #login,
+.register__form #password,
+.register__form #password_confirmation {
+    width: 100%;
+    height: 45px;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(33, 140, 0, 0.2);
+    border-radius: 10px;
+    color: #fff;
+    padding: 0 15px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    margin-bottom: 10px;
+    position: relative;
+    z-index: 2;
+}
+
+.register__form input[type="text"]:focus,
+.register__form input[type="email"]:focus,
+.register__form input[type="password"]:focus,
+.register__form #login:focus,
+.register__form #password:focus,
+.register__form #password_confirmation:focus {
+    border-color: #218C00;
+    box-shadow: 0 0 15px rgba(33, 140, 0, 0.2);
+    outline: none;
+}
+
+.register__form input::placeholder {
+    color: #35e200;
+}
+
+.sogl {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 15px 0;
+    color: #fff;
+    position: relative;
+    z-index: 2;
+    cursor: pointer;
+    text-align: center;
+}
+
+.sogl label {
+    cursor: pointer;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: #218C00;
+    cursor: pointer;
+    position: relative;
+    z-index: 2;
+    margin: 0;
+}
+
+.button__register {
+    width: 100%;
+    height: 45px;
+    background: #218C00;
+    border: none;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 2;
+    margin-top: 10px;
+}
+
+.button__register:hover {
+    background: #1a7000;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(33, 140, 0, 0.2);
+}
+
+.social-login {
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+    z-index: 2;
+}
+
+.social-login__text {
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 10px;
+    display: block;
+}
+
+.google-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(33, 140, 0, 0.2);
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 2;
+    cursor: pointer;
+}
+
+.google-btn:hover {
+    background: rgba(33, 140, 0, 0.1);
+    border-color: #218C00;
+    transform: translateY(-2px);
+}
+
+.google-btn img {
+    width: 20px;
+    height: 20px;
+}
+
+@media (max-width: 768px) {
+    .register {
+        min-height: 100vh;
+        padding: 20px 0;
+    }
+    
+    .register-content {
+        padding: 0 15px;
+        width: 100%;
+    }
+
+    .register__form {
+        width: 100%;
+        padding: 30px 20px;
+    }
+
+    .register__title {
+        font-size: 2rem;
+        margin-bottom: 1.2rem;
+    }
+}
+
+/* Стили для сообщений об ошибках */
+.mt-2 {
+    margin-top: 0.3rem;
+    margin-bottom: 0.5rem;
+    color: #ff3333;
+    font-size: 0.875rem;
+    position: relative;
+    z-index: 2;
+}
